@@ -3118,7 +3118,7 @@ function showResult(type,raw,p){
     document.getElementById('rBig').innerHTML=`<div class="bigitem ${type==='dup'?'warnc':''}">${esc(p.drink||'—')} · คิวรับเครื่องดื่ม #${esc(String(p.drinkSequence||p.no||'—'))}</div>`+(p.sweet?`<div class="subitem">ความหวาน: ${esc(p.sweet)}</div>`:'')+groupCardHTML(p);
   }
   else{
-    document.getElementById('rBig').innerHTML=groupCardHTML(p);
+    document.getElementById('rBig').innerHTML=`<div class="bigitem ${type==='dup'?'warnc':''}" style="font-size:42px;font-weight:900;letter-spacing:1px">No. ${esc(String(p.no||'—'))}</div>`+groupCardHTML(p);
     const chips=[];if(p.shirtSize)chips.push('เสื้อ '+p.shirtSize);if(p.drink)chips.push(p.drink);
     document.getElementById('rChips').innerHTML=chips.map(c=>`<span class="chip">${esc(c)}</span>`).join('');
   }
